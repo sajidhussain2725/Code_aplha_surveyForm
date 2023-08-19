@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A survey form">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Survey Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header class="header">
+        <h1 id="title" class="bold">Survey Form</h1>
+    </header>
+    <main>
+        <form id="survey-form" class="container" method="post">
+            <p id="description">Thank you for taking the time to help us improve this platform!</p>
+            <label id="name-label" for="name">Name*</label>
+            <input id="name" class="input sm bottom-space pink" type="text" name="name" placeholder="Enter your name" required>
+            <label id="email-label" for="email">Email*</label>
+            <input id="email" class="input sm bottom-space pink" type="email" name="email" placeholder="Enter your email" required>
+            <label id="number-label" for="number">Age <span class="sm">(optional)</span></label>
+            <input id="number" class="input sm bottom-space pink" type="number" name="number" min="0" max="140" placeholder="Enter your age">
+            <label id="dropdown-label" for="dropdown">Which option describes you best as a programmer?*</label>
+            <select id="dropdown" class="option sm bottom-space" name="dropdown">
+                <option disabled selected value>Select an option</option>
+                <option value="I'm an absolute newbie.">I'm an absolute newbie.</option>
+                <option value="I've dabbled with HTML and CSS and/or want to learn my first programming language.">I've dabbled with HTML and CSS and/or want to learn my first programming language.</option>
+                <option value="I've been learning my first programming language for 3 months.">I've been learning my first programming language for 3 months.</option>
+                <option value="I've been programming for about a year.">I've been programming for about a year.</option>
+                <option value="I've been programming for 2 to 5 years.">I've been programming for 2 to 5 years.</option>
+                <option value="I've been programming for more than 5 years.">I've been programming for more than 5 years.</option>
+            </select>
+            <label for="focus-area">Which web development area would you like to focus on?*</label>
+            <div id="focus-area" class="container bottom-space">
+                <label for="radio-1"><input class="pink" id="radio-1" name="radio-set" type="radio" value="Frontend">
+                    Frontend</label>
+                <label for="radio-2"><input id="radio-2" class="pink" name="radio-set" type="radio" value="Backend">
+                    Backend</label>
+                <label for="radio-3"><input type="radio" id="radio-3" class="pink" name="radio-set" value="Full Stack">
+                    Full Stack</label>
+            </div>
+            <label for="checkboxes">Which topics are you interested in?* <span class="sm">(Check all that apply)</span></label>
+            <div id="checkboxes" class="container bottom-space">
+                <label for="checkbox-1" class="checkbox"><input type="checkbox" id="checkbox-1" class="pink" name="checkbox-set" value="HTML and CSS">
+                    HTML and CSS</label>
+                <label for="checkbox-2"><input type="checkbox" id="checkbox-2" class="pink" name="checkbox-set" value="JavaScript">
+                    JavaScript</label>
+                <label for="checkbox-3"><input type="checkbox" id="checkbox-3" class="pink" name="checkbox-set" value="Python">
+                    Python</label>
+                <label for="checkbox-4"><input type="checkbox" id="checkbox-4" class="pink" name="checkbox-set" value="Go">
+                    Go</label>
+                <label for="checkbox-5"><input type="checkbox" id="checkbox-5" class="pink" name="checkbox-set" value="Rust">
+                    Rust</label>
+                <label for="checkbox-6"><input type="checkbox" id="checkbox-6" class="pink" name="checkbox-set" value="C#">
+                    C#</label>
+                <label for="checkbox-7"><input type="checkbox" id="checkbox-7" class="pink" name="checkbox-set" value="Other">
+                    Other (please specify) <input id="specify" class="input sm" type="text" name="other-specify" placeholder="Please specify here"></label>
+            </div>
+            <label id="textarea-label" for="textarea">Any comments or suggestions? <span class="sm">(optional)</span></label>
+            <textarea id="textarea" class="sm pink" name="comments" placeholder="Enter your message here..."></textarea>
+            <div class="top-space">
+                <input type="submit" id="submit" value="Submit">
+            </div>
+            <div>
+                <p class="sm">* - Only questions marked with an asterisk (*) are required.</p>
+            </div>
+        </form>
+    </main>
+</body>
+</html>
